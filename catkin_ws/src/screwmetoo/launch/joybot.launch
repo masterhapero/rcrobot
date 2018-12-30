@@ -14,12 +14,12 @@ max_delta_rpm: 400
 
  <node pkg="rosserial_python" type="serial_node.py" name="serial_node"
  	output="screen" respawn="true" respawn_delay="10">
-    <param name="port" value="/dev/ttyACM1" />
+    <param name="port" value="/dev/ttyACM_Servo" />
  </node>
 
  <node pkg="vesc_driver" type="vesc_driver_node" name="vesc_driver_node"
  	output="screen" respawn="true" respawn_delay="10">
-    <param name="port" value="/dev/ttyACM0" />
+    <param name="port" value="/dev/ttyACM_VESC" />
  </node>
 
  <node pkg="vesc_ackermann" type="throttle_interpolator.py" name="throttle_node"

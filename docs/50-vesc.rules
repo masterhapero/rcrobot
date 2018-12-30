@@ -1,0 +1,2 @@
+SUBSYSTEM=="tty", ATTRS{idProduct}=="5740", ATTRS{idVendor}=="0483", ACTION=="add", SYMLINK+="ttyACM_VESC", MODE="666"
+

@@ -1,0 +1,3 @@
+SUBSYSTEM=="tty", ATTRS{idProduct}=="8036", ATTRS{idVendor}=="2341", ACTION=="add", SYMLINK+="ttyACM_Servo", MODE="666"
+
+

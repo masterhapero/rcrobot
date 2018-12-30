@@ -1,0 +1,8 @@
+/etc/udev/rules.d$ udevadm info -a -p $(udevadm info -q path -n ttyACM1)
+
+nano 40-vesc.rules
+
+udevadm control --reload-rules
+service udev restart
+udevadm trigger
+
