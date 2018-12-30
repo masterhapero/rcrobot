@@ -1,0 +1,28 @@
+<!-- -*- mode: XML -*- -->
+<launch>
+
+  <arg name="node_name" default="vesc_driver_node" />
+
+  <!-- Optionally launch in GDB, for debugging -->
+  <arg name="debug" default="false" />
+  <arg if="$(arg debug)" name="launch_prefix" value="xterm -e gdb --args" />
+  <arg unless="$(arg debug)" name="launch_prefix" value="" />
+
+  <!-- VESC driver parameters -->
+<!--  <arg name="port" default="/dev/ttyACM1" />-->
+  <arg name="port" default="/dev/vesc" />
+
+  <!-- VESC driver node -->
+  <node pkg="vesc_driver" type="vesc_driver_node" name="$(arg node_name)"
+        output="screen" launch-prefix="$(arg launch_prefix)" respawn="true" respawn_delay="10">
+    <param name="port" value="$(arg port)" />
+
+  </node>
+
+
+
+  <include file="$(find vesc_ackermann)/launch/ackermann_to_vesc_node.launch" />
+
+  <include file="$(find vesc_ackermann)/launch/vesc_to_odom_node.launch" />
+
+</launch>

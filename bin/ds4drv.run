@@ -1,0 +1,4 @@
+#!/bin/bash
+sudo /usr/local/bin/ds4drv --hidraw --trackpad-mouse
+
+

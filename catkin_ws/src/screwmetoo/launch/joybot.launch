@@ -1,0 +1,35 @@
+<launch>
+
+  <rosparam>
+speed_min: -5000
+speed_max:  5000
+max_delta_rpm: 400
+  </rosparam>
+
+
+ <node pkg="joy" type="joy_node" name="joy_node"
+ 	output="screen" respawn="true" respawn_delay="10">
+    <param name="dev" value="/dev/input/js1" />
+ </node>
+
+ <node pkg="rosserial_python" type="serial_node.py" name="serial_node"
+ 	output="screen" respawn="true" respawn_delay="10">
+    <param name="port" value="/dev/ttyACM1" />
+ </node>
+
+ <node pkg="vesc_driver" type="vesc_driver_node" name="vesc_driver_node"
+ 	output="screen" respawn="true" respawn_delay="10">
+    <param name="port" value="/dev/ttyACM0" />
+ </node>
+
+ <node pkg="vesc_ackermann" type="throttle_interpolator.py" name="throttle_node"
+ 	output="screen" respawn="true" respawn_delay="10">
+ </node>
+
+
+ <node pkg="screwmetoo" type="servo_teleop_joy_ratelimit.py" name="teleop_node"
+ 	output="screen" respawn="true" respawn_delay="10">
+ </node>
+
+</launch>
+

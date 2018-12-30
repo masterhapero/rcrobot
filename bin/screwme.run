@@ -1,0 +1,18 @@
+#!/bin/bash
+while [ ! -e /dev/input/js0 ]; do
+    echo waiting for joystick
+    sleep 2
+done
+sleep 10
+#  xinput|grep Touchpad|awk '{ print $6 }'
+# xinput|grep Touchpad|awk '{ print $6 }'|sed 's/id=//g'
+ID=`xinput|grep Touchpad|awk '{ print $6 }'|sed 's/id=//g'`
+echo Removing $ID
+xinput disable $ID
+/home/ubuntu/ds4drv.run&
+source /opt/ros/kinetic/setup.bash
+source /home/ubuntu/catkin_ws/devel/setup.bash
+source /etc/ubiquity/env.sh
+roslaunch screwmetoo joybot.launch
+wait
+

@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=sensorscore
+Exec=/bin/bash /home/ubuntu/rcrobot/bin/sensorscore.run
+Type=Application
+Terminal=true
