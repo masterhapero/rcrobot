@@ -9,9 +9,9 @@ sleep 10
 ID=`xinput|grep Touchpad|awk '{ print $6 }'|sed 's/id=//g'`
 echo Removing $ID
 xinput disable $ID
-/home/ubuntu/ds4drv.run&
+/home/ubuntu/rcrobot/bin/ds4drv.run&
 source /opt/ros/kinetic/setup.bash
-source /home/ubuntu/catkin_ws/devel/setup.bash
+source /home/ubuntu/rcrobot/catkin_ws/devel/setup.bash
 source /etc/ubiquity/env.sh
 roslaunch screwmetoo joybot.launch
 wait
