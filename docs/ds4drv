@@ -1,0 +1,32 @@
+ps + share = pair
+
+pi@raspberrypi:~ $ pip3 show six
+Name: six
+Version: 1.16.0
+Summary: Python 2 and 3 compatibility utilities
+Home-page: https://github.com/benjaminp/six
+Author: Benjamin Peterson
+Author-email: benjamin@python.org
+License: MIT
+Location: /usr/local/lib/python3.7/dist-packages
+Requires: 
+Required-by: pyudev
+pi@raspberrypi:~ $ pip3 show ds4drv
+Name: ds4drv
+Version: 0.5.1
+Summary: A Sony DualShock 4 userspace driver for Linux
+Home-page: https://github.com/chrippa/ds4drv
+Author: Christopher Rosell
+Author-email: chrippa@tanuki.se
+License: MIT
+Location: /usr/local/lib/python3.7/dist-packages
+Requires: evdev, pyudev
+Required-by: 
+pi@raspberrypi:~ $
+
+root@raspberrypi:/home/pi# ds4drv 
+[info][controller 1] Created devices /dev/input/js0 (joystick) /dev/input/event0 (evdev) 
+[info][bluetooth] Scanning for devices
+[info][bluetooth] Found device 70:20:84:9A:B5:AF
+[info][controller 1] Connected to Bluetooth Controller (70:20:84:9A:B5:AF)
+[info][bluetooth] Scanning for devices
